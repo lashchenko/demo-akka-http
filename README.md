@@ -1,6 +1,8 @@
 Demo-Akka-HTTP
 ==========
 
+[![Build Status](https://travis-ci.org/lashchenko/demo-akka-http.svg?branch=master)](https://travis-ci.org/lashchenko/demo-akka-http)
+
 The project provides demo of both [Akka-HTTP](https://doc.akka.io/docs/akka-http/current/scala/http/) client and server applications that use simple `DemoEntity` model for demonstration purposes.
 JSON serialization and deserialization implemented using [spray-json](https://github.com/spray/spray-json).
 Dependency injection used [Scala extensions for Google Guice](https://github.com/codingwell/scala-guice).
@@ -53,7 +55,7 @@ client {
 
 Tests of the client available in `DemoHttpClientTest`.
 To run the client application use `DemoHttpClientApp`, output should be like:
-```js
+```
 	REQUEST: HttpRequest(HttpMethod(POST),http://localhost:8080/v1/demo-server/entities,List(),HttpEntity.Strict(application/json,{"int":1,"long":1024,"string":"0xABC"}),HttpProtocol(HTTP/1.1))
 	RESPONSE: HttpResponse(200 OK,List(Server: akka-http/10.0.10, Date: Sat, 04 Nov 2017 11:02:00 GMT),HttpEntity.Strict(application/json,{"id":"b4fea167-44be-4cb1-a4d2-1a6370731ad6","int":1,"long":1024,"string":"0xABC"}),HttpProtocol(HTTP/1.1))
 create result: Success(DemoEntity(Some(b4fea167-44be-4cb1-a4d2-1a6370731ad6),Some(1),Some(1024),Some(0xABC),None))
