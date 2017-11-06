@@ -31,7 +31,6 @@ class DemoEntityRepository @Inject() (
   }
 
   override def read(id: UUID): Future[DemoEntity] = Future {
-    println("ALL " + db.values.mkString)
     require(db.contains(id), "You must to use correct 'id' field value to read an object.")
     db(id)
   }

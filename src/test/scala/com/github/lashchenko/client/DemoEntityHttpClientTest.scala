@@ -114,7 +114,6 @@ class DemoEntityHttpClientTest extends AsyncWordSpec with Matchers {
 
     "read DemoEntity with non empty 'id' field" in {
       client.read(DemoEntity(id = Some(TestId)))
-        .map { e ⇒ println("??? ===> " + e); e }
         .map(e ⇒ e shouldBe DemoEntity(id = Some(TestId), int = Some(1), long = Some(1024L), string = Some("0xABC")))
     }
 
